@@ -1,0 +1,15 @@
+{
+  "name": "@fuzzy-winner/dotnet-api",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "dotnet build",
+    "dev": "dotnet run",
+    "start": "dotnet run --no-build",
+    "test": "dotnet test",
+    "clean": "dotnet clean",
+    "publish": "dotnet publish -c Release -o ./publish"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
