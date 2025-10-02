@@ -1,5 +1,6 @@
 import Image, { type ImageProps } from "next/image";
 import { Button } from "@repo/ui/button";
+import { DateDisplay } from "@repo/ui/date-display";
 import styles from "./page.module.css";
 
 type Props = Omit<ImageProps, "src"> & {
@@ -66,6 +67,27 @@ export default function Home() {
         <Button appName="web" className={styles.secondary}>
           Open alert
         </Button>
+        
+        <div style={{ marginTop: '2rem', padding: '1rem', border: '1px solid #e5e7eb', borderRadius: '8px' }}>
+          <h3 style={{ marginBottom: '1rem' }}>Date Display Demo</h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+            <div>
+              <strong>Today:</strong> <DateDisplay date={new Date()} showRelative />
+            </div>
+            <div>
+              <strong>Yesterday:</strong> <DateDisplay date={new Date(Date.now() - 24 * 60 * 60 * 1000)} showRelative />
+            </div>
+            <div>
+              <strong>Tomorrow:</strong> <DateDisplay date={new Date(Date.now() + 24 * 60 * 60 * 1000)} showRelative />
+            </div>
+            <div>
+              <strong>Long format:</strong> <DateDisplay date={new Date()} format="long" />
+            </div>
+            <div>
+              <strong>With time:</strong> <DateDisplay date={new Date()} format="datetime" />
+            </div>
+          </div>
+        </div>
       </main>
       <footer className={styles.footer}>
         <a
